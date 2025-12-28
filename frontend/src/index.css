@@ -1,0 +1,351 @@
+/* General Body and Layout Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f6f8;
+}
+
+#root, .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Login Form Styles */
+.form-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.form-container .error-message {
+  color: #dc3545;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Admin Dashboard Layout */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 0 20px;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.admin-header h1 {
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column; /* Stacks header and content vertically */
+  flex-grow: 1;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent body scroll */
+}
+
+.dashboard-content {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden; /* Allows internal scrolling */
+}
+
+.sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow sidebar to scroll if content overflows */
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto; /* Allow main content to scroll */
+}
+
+.placeholder {
+  text-align: center;
+  margin-top: 100px;
+  color: #6c757d;
+}
+
+/* Tabs for switching between Course and User Management */
+.tabs {
+    display: flex;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tabs button {
+    flex: 1;
+    padding: 12px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-left-width: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+.tabs button:first-child {
+  border-left-width: 1px;
+}
+.tabs button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Course List Styles */
+.course-list {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.course-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-item:last-child {
+  border-bottom: none;
+}
+
+.course-item:hover {
+  background-color: #f8f9fa;
+}
+
+.course-item.selected {
+  background-color: #e2f3e8;
+  font-weight: bold;
+}
+
+.course-actions button {
+    margin-left: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Forms in Sidebar and Main Content */
+.course-form, .material-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.course-form input, .course-form textarea, .material-form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.course-form button, .material-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: #007bff;
+}
+.course-form button[type="button"] {
+  background-color: #6c757d;
+  margin-top: 5px;
+}
+
+
+/* Materials List */
+.materials-list {
+  margin-top: 30px;
+}
+
+.material-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* General Button Styles */
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.edit-btn { background-color: #ffc107; color: #212529; }
+.delete-btn { background-color: #dc3545; color: white; }
+.manage-quiz-btn { background-color: #28a745; color: white; margin-right: 10px; }
+.back-button { background-color: #6c757d; color: white; margin-bottom: 20px; }
+
+
+/* Quiz Manager Styles */
+.quiz-manager h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.add-question-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+.add-question-form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.question-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.option-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option-input input[type="radio"] { margin-right: 10px; width: auto; }
+.option-input input[type="text"] { flex-grow: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+
+.remove-option-btn, .add-option-btn {
+  margin-left: 10px;
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.add-option-btn {
+  background-color: #007bff;
+  width: auto;
+  margin-top: 10px;
+}
+
+
+/* User Management and Assignment Styles */
+.user-management {
+    padding: 10px;
+}
+
+.user-list, .course-assignment-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.user-item, .course-assignment-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-item:hover {
+    background-color: #f8f9fa;
+}
+
+.user-item.selected {
+    background-color: #d4edda;
+}
+
+.assign-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+
+.unassign-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+
