@@ -4,8 +4,8 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
   host: 'localhost', // Your MySQL host
   user: 'root',      // Your MySQL username
-  password: 'manoj', // <<< IMPORTANT: Enter your MySQL password here
-  database: 'learning_platform' // The name of your database
+  password: 'DB_PASS', // <<< IMPORTANT: Enter your MySQL password here
+  database: 'DB_NAME' // The name of your database
 });
 
 console.log('MySQL Connection Pool Created.');
